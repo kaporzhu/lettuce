@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 # <Lettuce - Behaviour Driven Development for python>
 # Copyright (C) <2010-2012>  Gabriel Falcão <gabriel@nacaolivre.org>
 #
@@ -405,7 +405,8 @@ class Step(object):
     def run(self, ignore_case):
         """Runs a step, trying to resolve it on available step
         definitions"""
-        matched, step_definition = self.pre_run(ignore_case)
+        matched, step_definition = self.pre_run(ignore_case,
+                                                self.related_outline)
         self.ran = True
         kw = matched.groupdict()
 
